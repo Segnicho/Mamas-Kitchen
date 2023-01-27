@@ -33,7 +33,7 @@ function App() {
           </>
         }/>
         <Route path="/about" element={<About/>}/>
-        <Route path="/rooms" element={
+        <Route path="/" element={
           <>
            <Hero image={homehero} title="Welcome Home"/>
            <Rooms/>
