@@ -11,14 +11,13 @@ const RoomSchema = new mongoose.Schema({
     desc:{
         type:String,
         required:true,
-        unique:true
     },
 
     capacity :{
         type:String,
         required:true,
-        unique:true
     },
+
     
     bedNumber:{
         type:Number,
