@@ -26,6 +26,12 @@ function App() {
     <Router>
       <Navbar/>
       <Routes>
+      <Route exact path="/" element={
+          <>
+           <Hero image={homehero} title="Welcome Home"/>
+           <Rooms/>
+          </>
+        }/>
         <Route path="/menu" element={
           <>
             <Hero image={hero} title="Our Menus"/>
@@ -33,12 +39,6 @@ function App() {
           </>
         }/>
         <Route path="/about" element={<About/>}/>
-        <Route path="/" element={
-          <>
-           <Hero image={homehero} title="Welcome Home"/>
-           <Rooms/>
-          </>
-        }/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<Register/>}/>
         <Route path="/contact" element={<Contact/>}/>

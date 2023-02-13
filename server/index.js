@@ -8,6 +8,7 @@ import roomsRoutes from './routes/room.js'
 import foodsRoutes from './routes/food.js'
 import cors from 'cors';
 import cookieParser from "cookie-parser";
+import cors from 'cors'
 dotenv.config();
 
 const app = express();
@@ -33,6 +34,7 @@ const connetDB = async () =>{
 
 
 // Miidlewares
+app.use(cors())
 app.use(express.json());
 app.use(cors());
 app.use(cookieParser());

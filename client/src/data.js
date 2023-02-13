@@ -15,9 +15,9 @@ import hotel6 from './images/hotel6.jpg'
 
 
 export const navbars = [
-    {
+    {   
         name:"Rooms",
-        link:'/rooms'
+        link:'/'
     },
     {
         name:"Order",
