@@ -2,26 +2,34 @@ import mongoose from "mongoose";
 
 const RoomReserveSchema = new mongoose.Schema({
 
-    name: {
+    title: {
         type:String,
         required:true,
 
     },
 
-    userId:{
-        type:String 
-    },
-    capacity:{
-        type:Number
+    desc:{
+        type:String,
+        required:true,
     },
 
-    reserved:{
-        type:Boolean
+    capacity :{
+        type:String,
+        required:true,
     },
-    price:{
+
+    
+    bedNumber:{
         type:Number,
         required:true
     },
+    branch: {
+        type:Array
+    },
+    userId:{
+        type:String
+    }  
+
     
 })
 

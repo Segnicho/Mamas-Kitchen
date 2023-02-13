@@ -11,15 +11,7 @@ const FoodSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
-  maxPeople: {
-    type: Number,
-    required: true,
-  },
-  availablity: {
-    type: {
-      Boolean,
-    },
-  },
+  
 
   price: {
     type: Number,

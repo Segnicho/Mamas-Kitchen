@@ -3,23 +3,28 @@ import mongoose from "mongoose";
 const FoodOrderSchema = new mongoose.Schema({
 
     title: {
-        type:String,
-        required:true,
-    },
-
-    userId:{
-        type:String 
-    },
-    amount:{
-        type:Number
-    },
-    status:{
+        type: String,
+        required: true,
+      },
+    
+      desc: {
+        type: String,
+        required: true,
+        unique: true,
+      },
+      
+    
+      price: {
+        type: Number,
+        required: true,
+      },
+    
+      branch: {
+        type: String,
+      },
+      userId:{
         type:String
-    },
-    price:{
-        type:Number,
-        required:true
-    },
+      }
 
 })
 
