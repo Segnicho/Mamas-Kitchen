@@ -6,9 +6,11 @@ import authenticationRoute from './routes/auth.js'
 import usersRoutes from './routes/user.js'
 import roomsRoutes from './routes/room.js'
 import foodsRoutes from './routes/food.js'
+import roomBookRoutes from './routes/roomBook.js'
+import foodOrderRoute from './routes/foodOrder.js'
 import cors from 'cors';
 import cookieParser from "cookie-parser";
-import cors from 'cors'
+
 dotenv.config();
 
 const app = express();
@@ -36,14 +38,14 @@ const connetDB = async () =>{
 // Miidlewares
 app.use(cors())
 app.use(express.json());
-app.use(cors());
 app.use(cookieParser());
 
 app.use('/api/auth',authenticationRoute)
 app.use('/api/users',usersRoutes)
 app.use('/api/foods',foodsRoutes)
 app.use('/api/rooms',roomsRoutes)
-
+app.use('/api/book',roomBookRoutes)
+app.use('/api/order',foodOrderRoute)
 
 
 

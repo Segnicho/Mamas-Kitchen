@@ -10,12 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "aos": "^2.3.4",
     "bcryptjs": "^2.4.3",
-<<<<<<< HEAD
     "cookie-parser": "^1.4.6",
-=======
->>>>>>> bdcc5943100468b5cce93d1fa42459e7b85261f1
     "cors": "^2.8.5",
     "crypto-js": "^4.1.1",
     "dotenv": "^16.0.3",
