@@ -33,7 +33,7 @@ export const registerUser = async(req, res) =>{
 
 export const loginUser = async (req, res)=>{
     try {
-        const user = await User.findOne({username:req.body.username});
+        const user = await User.findOne({email:req.body.email});
         !user && res.status(500).json("Invalid credentials");
         const hashedPassword = cryptojs.AES.decrypt(user.password,
             process.env.PASS

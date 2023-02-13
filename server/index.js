@@ -6,7 +6,7 @@ import authenticationRoute from './routes/auth.js'
 import usersRoutes from './routes/user.js'
 import roomsRoutes from './routes/room.js'
 import foodsRoutes from './routes/food.js'
-
+import cors from 'cors'
 dotenv.config();
 
 const app = express();
@@ -32,6 +32,7 @@ const connetDB = async () =>{
 
 
 // Miidlewares
+app.use(cors())
 app.use(express.json());
 
 app.use('/api/auth',authenticationRoute)
