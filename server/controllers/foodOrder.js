@@ -11,7 +11,7 @@ export const orderFood = async (req, res) =>{
 }
 export const getOrderedFood = async (req, res) =>{
     try {
-        const foods = await FoodOrder.find({userId:id})
+        const foods = await FoodOrder.find({userId:req.params.userId})
         res.status(200).json(foods)
     } catch (err) {
         res.status(501).json(err)

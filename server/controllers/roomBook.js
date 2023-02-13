@@ -12,7 +12,7 @@ export const bookRoom = async (req, res) =>{
 
 export const getBookedRooms = async (req, res) =>{
     try {
-        const rooms = await RoomReserve.find({userId:id})
+        const rooms = await RoomReserve.find({userId:req.params.userId})
         res.status(200).json(rooms)
     } catch (err) {
         res.status(501).json(err)

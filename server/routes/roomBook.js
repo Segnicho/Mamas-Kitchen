@@ -1,11 +1,11 @@
-import {getBookedRooms, reserveRoom } from '../controllers/roomBook.js'
+import {getBookedRooms, bookRoom } from '../controllers/roomBook.js'
 
 import express  from "express";
 const router = express.Router()
 
 
-router.post('/', reserveRoom)
-router.get('/:id', getBookedRooms)
+router.post('/', bookRoom)
+router.get('/:userId', getBookedRooms)
 
 
 export default router
