@@ -1,11 +1,10 @@
-// import {loginUser, registerUser, } from '../controllers/user.js'
-
 import express  from "express";
+import { deleteARoom, getAllRooms, getARoom, updateRoom } from '../controllers/room.js';
 const router = express.Router()
-// router.put('/:id', updateUser)
-// router.get('/:id', getUser)
-// router.get('/', getAllUsers)
-// router.delete('/:id', deleteUser)
+router.put('/:id', updateRoom)
+router.get('/:id', getARoom)
+router.get('/', getAllRooms)
+router.delete('/:id', deleteARoom)
 
 
 

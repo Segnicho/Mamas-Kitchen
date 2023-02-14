@@ -1,7 +1,21 @@
 import React from "react";
 import { rooms } from "../../data";
+import { useEffect } from "react";
+import { baseUrl} from '../../api'
+import { useState } from "react";
+import axios from 'axios'
+import roomImg from '../../images/hotel5.jpg'
 
 const Rooms = () => {
+  const [rooms,setRooms] = useState([])
+  console.log(rooms)
+  useEffect(() => {
+    const fetchRooms = async () => {
+      const response = await axios.get(`${baseUrl}/rooms`)
+      setRooms(response.data)
+    }
+    fetchRooms()
+  },[])
   return (
     <div className="flex flex-col justify-center items-center bg-slate-200 pb-10">
         <div className="flex flex-col justify-center items-center my-20">
@@ -27,7 +41,7 @@ const Rooms = () => {
             <div>
               <img
                 className="w-[40vh] h-[100%] object-cover"
-                src={room.img}
+                src={roomImg}
                 alt=""
               />
             </div>
