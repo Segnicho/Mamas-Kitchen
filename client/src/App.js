@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import Hero from "./components/menu/Hero";
 import Navbar from "./components/Navbar";
 import Aos from "aos";
-import "aos/dist/aos.css";
+// import "aos/dist/aos.css";
 import Menu from "./components/menu/Menu";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
