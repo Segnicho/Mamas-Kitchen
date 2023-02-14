@@ -1,17 +1,12 @@
 import User from "../models/User.js"
-// 
+
 import cryptojs from 'crypto-js';
 
 import Jwt  from "jsonwebtoken";
-
-
-
-
-
 export const registerUser = async(req, res) =>{
 
     const hashPassword = cryptojs.AES.encrypt(req.body.password, process.env.PASS).toString();
-    // req.body.password = hashPassword
+
     const newUser = User({
 
         username:  req.body.username,
@@ -29,7 +24,6 @@ export const registerUser = async(req, res) =>{
     }
 
 }
-
 
 export const loginUser = async (req, res)=>{
     try {
