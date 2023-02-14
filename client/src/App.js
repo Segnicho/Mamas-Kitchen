@@ -15,6 +15,8 @@ import Contact from "./components/Contact/Contact";
 import Footer from './components/Footer'
 import RoomDetail from "./components/RoomDetail";
 import Order from "./components/Order";
+import Reserve from "./components/Reserve";
+import FoodDetail from './components/FoodDetail'
 
 function App() {
   useEffect(() => {
@@ -46,6 +48,8 @@ function App() {
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/food/:id" element ={<RoomDetail/>} />
         <Route path="/order" element ={<Order/>}  />
+        <Route path="/reserve" element ={<Reserve/>} />
+        <Route path="/room/:id" element ={<FoodDetail/>} />
       </Routes>
       <Footer/>
     </Router>

@@ -5,16 +5,16 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import { baseUrl } from '../api'
 import foodImg from '../images/hero3.jpg' 
 
-const RoomDetail = () => {
-    const [food,setFood] = useState()
+const FoodDetail = () => {
+    const [room,setroom] = useState()
     const user = JSON.parse(localStorage.getItem("user"))
     const navigate = useNavigate()
     const params = useParams()
     const id =  params.id 
     useEffect(() => {
         const fetchAfood = async () => {
-            const response = await axios.get(`${baseUrl}/foods/find/${id}`)
-            setFood(response.data)
+            const response = await axios.get(`${baseUrl}/rooms/find/${id}`)
+            setroom(response.data)
         }
         fetchAfood()
         
@@ -23,7 +23,7 @@ const RoomDetail = () => {
     const handleOrder = async () => {
         try{
         const userId  = user._id
-        const order = await axios.post(`${baseUrl}/order`,{...food,userId:userId})
+        const order = await axios.post(`${baseUrl}/order`,{...room,userId:userId})
         navigate('/order')
         }catch(err) {
             console.log(err)
@@ -31,9 +31,9 @@ const RoomDetail = () => {
     }
   return (
     <div className='w-screen h-screen bg-black/50 flex justify-center items-center'>
-        { food && <div className='bg-white mt-8 p-10 rounded-md'>
+        { room && <div className='bg-white mt-8 p-10 rounded-md'>
             <img className='w-[50vh] h-[30vh] rounded-md' src={foodImg} alt='' />
-            <h1 className='text-2xl mt-3'>{food.title}</h1>
+            <h1 className='text-2xl mt-3'>{room.title}</h1>
              <div className='flex my-5'> 
                 <h1>Number: </h1>
                 <button className='ml-2 text-coral-500'>-</button>
@@ -46,4 +46,4 @@ const RoomDetail = () => {
   )
 }
 
-export default RoomDetail
+export default FoodDetail

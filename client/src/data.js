@@ -24,6 +24,10 @@ export const navbars = [
         link:'/order'
     },
     {
+        name:"Reserves",
+        link:'/reserve'
+    },
+    {
         name:"Menu",
         link:'/menu'
     },

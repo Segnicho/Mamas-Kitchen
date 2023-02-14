@@ -10,14 +10,16 @@ const Order = () => {
     console.log(orders)
     useEffect(() => {
         const fetchAfood = async () => {
-            const response = await axios.get("")
+            const userId = user._id
+            const response = await axios.get(`${baseUrl}/order/${userId}`)
+            console.log(response.data)
             setOrders(response.data)
         }
         fetchAfood()
     },[])
 
   return (
-    <div className="grid md:grid-cols-2 items-center justify-center gap-10 mx-3 cursor-pointer">
+    <div className="grid md:grid-cols-2 items-center h-screen  justify-center gap-10 mx-3 cursor-pointer bg-red">
     {orders && orders.map((order, indx) => (
         <div
         key={indx}
