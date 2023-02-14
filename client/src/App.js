@@ -49,7 +49,7 @@ function App() {
         <Route path="/food/:id" element ={<RoomDetail/>} />
         <Route path="/order" element ={<Order/>}  />
         <Route path="/reserve" element ={<Reserve/>} />
-        <Route path="/room/:id" element ={<FoodDetail/>} />
+        <Route path="/rooms/:id" element ={<FoodDetail/>} />
       </Routes>
       <Footer/>
     </Router>

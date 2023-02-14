@@ -23,6 +23,7 @@ const FoodDetail = () => {
     const handleOrder = async () => {
         try{
         const userId  = user._id
+        console.log( {...room,userId:userId} )
         const order = await axios.post(`${baseUrl}/order`,{...room,userId:userId})
         navigate('/order')
         }catch(err) {

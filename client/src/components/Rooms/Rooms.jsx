@@ -25,7 +25,7 @@ const Rooms = () => {
         </div>
       <div className="grid md:grid-cols-2 items-center justify-center gap-10 mx-3 cursor-pointer">
         {rooms.map((room, indx) => (
-          <Link to={`$rooms/${room._id}`}>
+          <Link to={`rooms/${room._id}`}>
           <div
             key={indx}
             data-aos="fade-up"
