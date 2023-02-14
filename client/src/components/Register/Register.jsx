@@ -27,7 +27,7 @@ const Register = () => {
     setUser({...user,[e.target.id]:e.target.value})
   }
   return (
-    <div className="mt-[9rem] flex justify-center items-center h-[70vh]">
+    <div className="mt-[9rem] flex justify-center items-center h-[80vh]">
       <div className="w-[100%] bg-black/40 absolute h-[100%]">
         <img
           className="w-full h-full object-cover mix-blend-overlay"

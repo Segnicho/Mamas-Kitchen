@@ -1,16 +1,24 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { baseUrl } from "../../api";
 import { foods } from "../../data";
+import foodImg from '../../images/hero3.jpg' 
 import Button from "../Button";
 
 const Menu = () => {
+  const [foods,setFoods] = useState([])
+  console.log(foods)
+  useEffect(() => {
+    const fetchFoods = async () => {
+      const response = await axios.get(`${baseUrl}/foods`)
+      setFoods(response.data)
+    }
+    fetchFoods()
+  },[])
   return (
     <div className="py-[5rem] flex flex-col items-center bg-slate-200 w-full">
-      {/* <p className="text-center my-[4rem] max-w-[1000px] m-auto text-xl font-thin px-5">
-        Our Menu Offers Modern Dishes, Inspired By Historic Italian Gastronomy.
-        The A La Carte Menu Is Available Throughout Lunch And Dinner With An
-        Additional Set Lunch Menu Offered Monday To Friday Excluding Public
-        Holidays.
-      </p> */}
+
       <div className="flex justify-center flex-col">
         <h1 className="text-center mb-3 font-light text-2xl">Exprience</h1>
         <h1 className="text-center mt-5 text-2xl">DELICIOUS MENU</h1>
@@ -23,11 +31,12 @@ const Menu = () => {
       </div>
       <div className="grid md:grid-cols-2 items-center justify-center gap-10 mx-3 cursor-pointer">
         {foods.map((food, indx) => (
-          <div
+          <Link to={`/food/${food._id}`}>
+            <div
             key={indx}
             data-aos="fade-up"
                 data-aos-delay={indx * 400}
-            className="bg-white flex p-3 max-w-[60vh] rounded-md gap-6"
+            className="bg-white flex p-3 max-w-[60vh] rounded-md gap-6 h-[10rem]"
           >
             <div>
               <h1 className="text-2xl">{food.title}</h1>
@@ -40,11 +49,12 @@ const Menu = () => {
             <div>
               <img
                 className="w-[40vh] h-[100%] object-cover"
-                src={food.img}
+                src={foodImg}
                 alt=""
               />
             </div>
           </div>
+          </Link>
         ))}
       </div>
     </div>

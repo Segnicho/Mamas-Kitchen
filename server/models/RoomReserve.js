@@ -13,19 +13,20 @@ const RoomReserveSchema = new mongoose.Schema({
         required:true,
     },
 
-    capacity :{
-        type:String,
-        required:true,
-    },
+    // capacity :{
+    //     type:String,
+    //     required:true,
+    // },
 
     
-    bedNumber:{
-        type:Number,
-        required:true
-    },
-    branch: {
-        type:Array
-    },
+    // bedNumber:{
+    //     type:Number,
+    //     required:true
+    // },
+    // branch: {
+    //     type:Array
+    // },
+    
     userId:{
         type:String
     }  
